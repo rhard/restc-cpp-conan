@@ -23,17 +23,17 @@ class RestccppConan(ConanFile):
 
     def requirements(self):
         self.requires("rapidjson/1.1.0@bincrafters/stable")
-        self.requires("cmake_findboost_modular/1.66.0@bincrafters/stable")
-        self.requires("boost_system/1.66.0@bincrafters/stable")
-        self.requires("boost_program_options/1.66.0@bincrafters/stable")
-        self.requires("boost_filesystem/1.66.0@bincrafters/stable")
-        self.requires("boost_date_time/1.66.0@bincrafters/stable")
-        self.requires("boost_context/1.66.0@bincrafters/stable")
-        self.requires("boost_coroutine/1.66.0@bincrafters/stable")
-        self.requires("boost_chrono/1.66.0@bincrafters/stable")
-        self.requires("boost_log/1.66.0@bincrafters/stable")
-        self.requires("boost_uuid/1.66.0@bincrafters/stable")
-        self.requires("boost_type_index/1.66.0@bincrafters/stable")
+        self.requires("boost/1.67.0@conan/stable")
+        #self.requires("boost_system/1.66.0@bincrafters/stable")
+        #self.requires("boost_program_options/1.66.0@bincrafters/stable")
+        #self.requires("boost_filesystem/1.66.0@bincrafters/stable")
+        #self.requires("boost_date_time/1.66.0@bincrafters/stable")
+        #self.requires("boost_context/1.66.0@bincrafters/stable")
+        #self.requires("boost_coroutine/1.66.0@bincrafters/stable")
+        #self.requires("boost_chrono/1.66.0@bincrafters/stable")
+        #self.requires("boost_log/1.66.0@bincrafters/stable")
+        #self.requires("boost_uuid/1.66.0@bincrafters/stable")
+        #self.requires("boost_type_index/1.66.0@bincrafters/stable")
         if self.options.tls:
             self.requires("OpenSSL/1.1.0g@conan/stable")
         if self.options.zlib:
