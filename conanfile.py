@@ -1,4 +1,5 @@
 from conans import ConanFile, CMake, tools
+import shutil
 
 
 class RestccppConan(ConanFile):
@@ -15,8 +16,8 @@ class RestccppConan(ConanFile):
 
     def source(self):
         tools.rmdir("restc-cpp")
-        self.run("git clone https://github.com/jgaa/restc-cpp")
-        self.run("cd restc-cpp && git checkout 658c28ee72267d71f0acbf679fcf100cb022327a")
+        self.run("git clone https://github.com/rhard/restc-cpp")
+        self.run("cd restc-cpp && git checkout d0d52e61d72a05e4683683dfcaea53d5a44edfc7")
         tools.replace_in_file("restc-cpp/CMakeLists.txt", "include(cmake_scripts/external-projects.cmake)","#include(cmake_scripts/external-projects.cmake)")
         tools.replace_in_file("restc-cpp/CMakeLists.txt", "if (EXISTS ${Boost_INCLUDE_DIRS}/boost/type_index.hpp)","if (1)")
         tools.replace_in_file("restc-cpp/CMakeLists.txt", "add_dependencies(${PROJECT_NAME} externalRapidJson)","#add_dependencies(${PROJECT_NAME} externalRapidJson)")
@@ -60,6 +61,7 @@ class RestccppConan(ConanFile):
 
     def package(self):
         self.copy("*.h", dst="include", src="restc-cpp/include")
+        self.copy("*.hpp", dst="include", src="restc-cpp/include")
         self.copy("*.h", dst="include/restc-cpp", src="generated-include/restc-cpp")
         self.copy("*.h", dst="include/restc-cpp", src="include-exports/restc-cpp")
         self.copy("*restc-cpp.lib", dst="lib", keep_path=False)
