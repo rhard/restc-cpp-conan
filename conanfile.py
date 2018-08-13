@@ -17,7 +17,7 @@ class RestccppConan(ConanFile):
     def source(self):
         tools.rmdir("restc-cpp")
         self.run("git clone https://github.com/rhard/restc-cpp")
-        self.run("cd restc-cpp && git checkout d0d52e61d72a05e4683683dfcaea53d5a44edfc7")
+        self.run("cd restc-cpp && git checkout 0a6f5626e054274e43e184ad9ce41f0544684243")
         tools.replace_in_file("restc-cpp/CMakeLists.txt", "include(cmake_scripts/external-projects.cmake)","#include(cmake_scripts/external-projects.cmake)")
         tools.replace_in_file("restc-cpp/CMakeLists.txt", "if (EXISTS ${Boost_INCLUDE_DIRS}/boost/type_index.hpp)","if (1)")
         tools.replace_in_file("restc-cpp/CMakeLists.txt", "add_dependencies(${PROJECT_NAME} externalRapidJson)","#add_dependencies(${PROJECT_NAME} externalRapidJson)")
