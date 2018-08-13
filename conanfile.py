@@ -10,8 +10,8 @@ class RestccppConan(ConanFile):
     description = "REST API c++ library"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "tls": [
-        True, False], "zlib": [True, False]}
-    default_options = "shared=False", "tls=True", "zlib=True"
+        True, False], "zlib": [True, False], "fPIC": [True, False]}
+    default_options = "shared=False", "tls=True", "zlib=True", "fPIC=True"
     generators = "cmake"
 
     def source(self):
@@ -56,6 +56,8 @@ class RestccppConan(ConanFile):
             cmake.definitions["RESTC_CPP_WITH_ZLIB"] = "ON"
         else:
             cmake.definitions["RESTC_CPP_WITH_ZLIB"] = "OFF"
+        if self.settings.os != "Windows":
+            cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE"] = self.options.fPIC
         cmake.configure(source_folder="restc-cpp")
         cmake.build()
 
