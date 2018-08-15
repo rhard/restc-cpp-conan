@@ -1,6 +1,8 @@
-[![Download](https://api.bintray.com/packages/rhard/public-conan/restc_cpp%3Arhard/images/download.svg) ](https://bintray.com/rhard/public-conan/restc_cpp%3Arhard/_latestVersion)
-[![Build Status](https://travis-ci.org/rhard/conan-restc_cpp.svg?branch=testing%2F0.9.2)](https://travis-ci.org/rhard/conan-restc_cpp)
-[![Build status](https://ci.appveyor.com/api/projects/status/github/rhard/conan-restc_cpp?branch=testing%2F0.9.2&svg=true)](https://ci.appveyor.com/project/rhard/conan-restc_cpp)
+## Package Status
+
+| Bintray | Appveyor | Travis |
+|---------|-----------|--------|
+|[![Download](https://api.bintray.com/packages/rhard/conan/restc_cpp%3Arhard/images/download.svg)](https://bintray.com/rhard/conan/restc_cpp%3Arhard/_latestVersion)|[![Build Status](https://travis-ci.org/rhard/conan-restc_cpp.svg?branch=testing%2F0.9.2)](https://travis-ci.org/rhard/conan-restc_cpp)|[![Build status](https://ci.appveyor.com/api/projects/status/github/rhard/conan-restc_cpp?branch=testing%2F0.9.2&svg=true)](https://ci.appveyor.com/project/rhard/conan-restc_cpp)|
 
 [Conan.io](https://conan.io) package recipe for *restc_cpp*.
 
@@ -38,8 +40,7 @@ The example below shows the commands used to publish to rhard conan repository. 
 
 The following command both runs all the steps of the conan file, and publishes the package to the local system cache.  This includes downloading dependencies from "build_requires" and "requires" , and then running the build() method.
 
-    $ conan create rhard/testing
-
+    $ conan create . rhard/testing
 
 ### Available Options
 | Option        | Default | Possible Values  |
@@ -57,10 +58,9 @@ The following command both runs all the steps of the conan file, and publishes t
 
     $ conan upload restc_cpp/0.9.2@rhard/testing --all -r rhard
 
-
 ## Conan Recipe License
 
 NOTE: The conan recipe license applies only to the files of this recipe, which can be used to build and package restc_cpp.
 It does *not* in any way apply or is related to the actual software being packaged.
 
-[MIT](https://github.com/rhard/restc-cpp-conan.git/blob/master/LICENSE.md)
+[MIT](https://github.com/rhard/restc-cpp-conan.git/blob/master/LICENSE)
