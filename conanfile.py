@@ -58,7 +58,7 @@ class RestccppConan(ConanFile):
         self.copy("*.h", dst="include/restc-cpp", src="include-exports/restc-cpp")
         self.copy("*restc-cpp.lib", dst="lib", keep_path=False)
         self.copy("*.dll", dst="bin", keep_path=False)
-        self.copy("*.so", dst="lib", keep_path=False)
+        self.copy("*.so*", dst="lib", keep_path=False)
         self.copy("*.dylib", dst="lib", keep_path=False)
         self.copy("*.a", dst="lib", keep_path=False)
 
