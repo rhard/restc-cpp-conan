@@ -24,7 +24,7 @@ class RestccppConan(ConanFile):
 
     def requirements(self):
         self.requires("rapidjson/1.1.0@bincrafters/stable")
-        self.requires("boost/1.67.0@conan/stable")
+        self.requires("boost/1.66.0@conan/stable")
         if self.options.tls:
             self.requires("OpenSSL/1.1.0g@conan/stable")
         if self.options.zlib:
