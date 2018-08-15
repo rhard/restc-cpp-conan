@@ -8,7 +8,7 @@
 
 REST API c++ library
 
-The packages generated with this **conanfile** can be found on [Bintray](https://bintray.com/rhard/public-conan/restc_cpp%3Arhard).
+The packages generated with this **conanfile** can be found on [Bintray](https://bintray.com/rhard/conan/restc_cpp%3Arhard).
 
 ## For Users: Use this package
 
