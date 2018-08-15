@@ -63,4 +63,5 @@ class RestccppConan(ConanFile):
         self.copy("*.a", dst="lib", keep_path=False)
 
     def package_info(self):
-        self.cpp_info.libs = ["restc-cpp"]
+        suffix = "D" if self.settings.build_type == "Debug" else ""
+        self.cpp_info.libs = ["restc-cpp%s" % suffix]
