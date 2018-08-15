@@ -52,7 +52,7 @@ The following command both runs all the steps of the conan file, and publishes t
 
 ## Add Remote
 
-    $ conan remote add rhard "https://api.bintray.com/conan/rhard/public-conan"
+    $ conan remote add rhard "https://api.bintray.com/conan/rhard/conan"
 
 ## Upload
 
