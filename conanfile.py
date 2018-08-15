@@ -48,6 +48,8 @@ class RestccppConan(ConanFile):
             cmake.definitions["RESTC_CPP_WITH_ZLIB"] = "OFF"
         if self.settings.os != "Windows":
             cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE"] = self.options.fPIC
+        if self.settings.compiler == "Visual Studio" and self.settings.arch == "x86" and self.options.shared:
+            cmake.definitions["CMAKE_SHARED_LINKER_FLAGS"] = "/SAFESEH:NO"
         cmake.configure(source_folder="restc-cpp")
         cmake.build()
 
