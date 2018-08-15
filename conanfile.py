@@ -6,7 +6,7 @@ class RestccppConan(ConanFile):
     name = "restc_cpp"
     version = "0.9.2"
     license = "MIT License"
-    url = "not published"
+    url = "https://github.com/rhard/restc-cpp"
     description = "REST API c++ library"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "tls": [
