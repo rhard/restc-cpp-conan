@@ -49,9 +49,9 @@ class RestccppConan(ConanFile):
         if self.settings.os != "Windows":
             cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE"] = self.options.fPIC
         if self.settings.compiler == "Visual Studio" and self.options.shared:
-            cmake.definitions["CMAKE_SHARED_LINKER_FLAGS"] = "ssleay32 libeay32 crypt32 msi ws2_32"
+            cmake.definitions["CMAKE_SHARED_LINKER_FLAGS"].append("ssleay32 libeay32 crypt32 msi ws2_32")
             if self.settings.arch == "x86":
-                cmake.definitions["CMAKE_SHARED_LINKER_FLAGS"] = "/SAFESEH:NO" 
+                cmake.definitions["CMAKE_SHARED_LINKER_FLAGS"].append("/SAFESEH:NO") 
         cmake.configure(source_folder="restc-cpp")
         cmake.build()
 
