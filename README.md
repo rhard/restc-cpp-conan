@@ -2,7 +2,7 @@
 
 | Bintray | Travis | Appveyor |
 |---------|-----------|--------|
-|[![Download](https://api.bintray.com/packages/rhard/conan/restc_cpp%3Arhard/images/download.svg)](https://bintray.com/rhard/conan/restc_cpp%3Arhard/_latestVersion)|[![Build Status](https://travis-ci.org/rhard/restc-cpp-conan.svg?branch=master)](https://travis-ci.org/rhard/restc-cpp-conan)|[![Build status](https://ci.appveyor.com/api/projects/status/github/rhard/restc-cpp-conan?branch=master&svg=true)](https://ci.appveyor.com/project/rhard/restc-cpp-conan-au97g)|
+|[![Download](https://api.bintray.com/packages/rhard/conan/restc_cpp%3Arhard/images/download.svg)](https://bintray.com/rhard/conan/restc_cpp%3Arhard/_latestVersion)|[![Build Status](https://travis-ci.org/rhard/restc-cpp-conan.svg)](https://travis-ci.org/rhard/restc-cpp-conan)|[![Build status](https://ci.appveyor.com/api/projects/status/github/rhard/restc-cpp-conan?svg=true)](https://ci.appveyor.com/project/rhard/restc-cpp-conan-au97g)|
 
 [Conan.io](https://conan.io) package recipe for *restc_cpp*.
 
@@ -45,7 +45,6 @@ The following command both runs all the steps of the conan file, and publishes t
 ### Available Options
 | Option        | Default | Possible Values  |
 | ------------- |:----------------- |:------------:|
-| shared      | False |  [True, False] |
 | tls      | True |  [True, False] |
 | zlib      | True |  [True, False] |
 | fPIC      | True |  [True, False] |
