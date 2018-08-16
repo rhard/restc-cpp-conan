@@ -9,9 +9,8 @@ class RestccppConan(ConanFile):
     url = "https://github.com/rhard/restc-cpp"
     description = "REST API c++ library"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "tls": [
-        True, False], "zlib": [True, False], "fPIC": [True, False]}
-    default_options = "shared=False", "tls=True", "zlib=True", "fPIC=True"
+    options = {"tls": [True, False], "zlib": [True, False], "fPIC": [True, False]}
+    default_options = "tls=True", "zlib=True", "fPIC=True"
     generators = "cmake"
 
     def source(self):
@@ -48,10 +47,6 @@ class RestccppConan(ConanFile):
             cmake.definitions["RESTC_CPP_WITH_ZLIB"] = "OFF"
         if self.settings.os != "Windows":
             cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE"] = self.options.fPIC
-        if self.settings.compiler == "Visual Studio" and self.options.shared:
-            cmake.definitions["CMAKE_SHARED_LINKER_FLAGS"] = "ssleay32 libeay32 crypt32 msi ws2_32"
-            if self.settings.arch == "x86":
-                cmake.definitions["CMAKE_SHARED_LINKER_FLAGS"] = cmake.definitions["CMAKE_SHARED_LINKER_FLAGS"] + " /SAFESEH:NO"
         cmake.configure(source_folder="restc-cpp")
         cmake.build()
 
@@ -61,9 +56,6 @@ class RestccppConan(ConanFile):
         self.copy("*.h", dst="include/restc-cpp", src="generated-include/restc-cpp")
         self.copy("*.h", dst="include/restc-cpp", src="include-exports/restc-cpp")
         self.copy("*restc-cpp*.lib", dst="lib", keep_path=False)
-        self.copy("*.dll", dst="bin", keep_path=False)
-        self.copy("*.so*", dst="lib", keep_path=False)
-        self.copy("*.dylib", dst="lib", keep_path=False)
         self.copy("*.a", dst="lib", keep_path=False)
 
     def package_info(self):
